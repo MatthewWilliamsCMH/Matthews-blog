@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/form.css" />
+        <title>Matthew's Blog</title>
+    </head>
+
+    <body>
+        <h1>Talk to Me!</h1>
+        <form method="POST">
+            <div id="metaData">
+                <div class="column">
+                    <label for="userName">Username:</label>
+                    <input type="text" placeholder="Author name" id="userName" />
+                </div>
+                <div class="column">
+                    <label for="postTitle">Title:</label>
+                    <input type="text" placeholder="Post title" id="postTitle" />
+                </div>
+            </div>
+            <div id="content">
+                <label for="postContent">Post:</label>
+                <textarea placeholder="Post content" id="postContent"></textarea>
+            </div>
+            <button id="submitButton" type="submit" form="blogForm" value="Submit">Submit</button>
+        </form>
+        <script src="./assets/js/form.js"></script>
+    </body>
+</html>
