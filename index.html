@@ -13,13 +13,15 @@
         <title>Matthew's Blog</title>
     </head>
 
-    <body>
+    <header>
         <h1>Talk to Me!</h1>
-        <form method="POST">
+    </header>
+    <body>
+        <form>
             <div id="metaData">
                 <div class="column">
-                    <label for="userName">Username:</label>
-                    <input type="text" placeholder="Author name" id="userName" />
+                    <label for="postAuthor">Author:</label>
+                    <input type="text" placeholder="Author name" id="postAuthor" />
                 </div>
                 <div class="column">
                     <label for="postTitle">Title:</label>
@@ -30,8 +32,9 @@
                 <label for="postContent">Post:</label>
                 <textarea placeholder="Post content" id="postContent"></textarea>
             </div>
-            <button id="submitButton" type="submit" form="blogForm" value="Submit">Submit</button>
+            <button id="submitButton" type="submit" value="submit">Submit</button>
         </form>
         <script src="./assets/js/form.js"></script>
+        <script src="./assets/js/blog.js"></script>
     </body>
 </html>

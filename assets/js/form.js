@@ -1,48 +1,63 @@
-const userName = document.querySelector("#userName");
+const postAuthor = document.querySelector("#postAuthor");
 const postTitle = document.querySelector("#postTitle");
 const postContent = document.querySelector("#postContent");
-const formSubmit = document.querySelector("#submitButton");
-let blogs = [];
+const form = document.querySelector("form");
+let posts = JSON.parse(localStorage.getItem("blogPosts")) || [];
 
-function writePosts {
-    const blogPost= {
-        userName: userName.value,
+localStorage.clear(); //for debugging only; remove in final version
+
+function savePost() {
+    const blogPost = {
+        postAuthor: postAuthor.value,
         postTitle: postTitle.value,
-        postContent: postContent.value
+        postContent: postContent.value,
     };
-    localStorage.setItem("blogPost", JSON.stringify("blogPost"));
-};
+    posts.push(blogPost)
+    localStorage.setItem("blogPosts", JSON.stringify(posts));
 
-function readPosts {
-    const blogList
-    document.getElementById("savedName").innerHTML=blogPost.userName;
-    document.getElementById("savedTitle").innerHTML=blogPost.postTitle;
-    document.getElementById("savedContent").innerHTML=blogPost.postContent;
-    let returnedPost=JSON.parse(localStorage.getItem("savedPost"));
+    window.open("./blog.html");
 }
 
-formSubmit.addEventListener("click", function (event) {
+function retrievePosts(){
+    // const blogEntry = document.querySelector(".post");
+    const postList = document.querySelector("#postList");
+    // const posts = JSON.parse(localStorage.getItem("blogPosts"));
+    
+    // postList.innerHTML = "";
+    for (let i = 0; i < posts.length; i++) {
+        const post = posts[i];
+        const postAuthor = post.postAuthor;
+        const postTitle = post.postTitle;
+        const postContent = post.postContent;
+
+        const article = document.createElement("article");
+        article.textContent="<article>\n<div class=\"titleauthor\">\n<p>" + postTitle + "</p>\n<p>" + postAuthor + "</p>\n</div>\n<div class=\"content\">\n<p>" + postContent + "</p>\n</div>\n</article>";
+        article.setAttribute("data-index", i);
+        
+        postList.appendChild(article);
+    };
+};
+
+
+
+form.addEventListener("submit", function(event) {
     event.preventDefault();
-    if (userName.value === "") {
-        alert("Please provide a username.");
-        return;
-    } else if (postTitle.value === "") {
-        alert("Please supply a title for this blog post.");
-        return;
-    } else if (postContent.value === "") {
-        alert("Please provide a blog entry.");
+    if (postAuthor.value === "") {
+        alert("Please provide the name of this blog\'s author.");
+        postAuthor.focus();
         return;
     };
-    const index = formSubmit.parentElement.getAttribute('data-index');
-    blogs.splice(index, 1);
-    writePosts();
+    
+    if (postTitle.value === "") {
+        alert("Please provide the title for this blog post.");
+        postTitle.focus();
+        return;
+    };
 
-    // let postCount= localStorage.length;
-    //     if (postCount === 0) {
-    //         localStorage.setItem("savedPosts", jSON.stringify(blogPost));
-    //     } else {
-    //         const savedPosts = JSON.parse(localStorage.getItem("posts"));
-    //     }
-    // localStorage.setItem("savedPost", JSON.stringify(blogPost));
-    // window.open("./blog.html");
+    if (postContent.value === "") {
+        alert("Please provide content for this blog post.");
+        postContent.focus();
+        return;
+    };
+    savePost();
 });
