@@ -16,3 +16,8 @@ label {
     padding-right: .5rem;
 }
 
+h1 {
+    font-weight:600;
+    font-size:28px;
+    text-align:center;
+}

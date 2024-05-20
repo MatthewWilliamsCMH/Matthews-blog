@@ -1,5 +1,46 @@
 /* ---------- past posts page ---------- */
-/* ----- adapted from https://www.w3schools.com/howto/howto_css_switch.asp ----- */
+
+.titleauthor {
+    display:inline-flex;
+    width:100%;
+    justify-content:space-between;
+    cursor:pointer;
+    /* border:1px solid red; */
+}
+
+.titleauthor p {
+    font-family:"Alegreya SC", serif;
+    text-transform:lowercase;
+    letter-spacing:.25em;
+}
+
+.content {
+    display:block;
+    padding:5px;
+    margin-top:1px;
+    width:100%;
+    height:56px;
+    max-height:56px;
+    overflow:hidden;
+    border:1px solid darkgray;
+    cursor:pointer;
+    background-color:#efefef;
+}
+
+.content.clicked {
+    max-height:fit-content;
+    height:fit-content;
+}
+.content.clicked p {
+    font-size:20px;
+}
+
+article {
+    max-width:600px;
+    margin-top:20px;
+}
+
+/* ----- slider adapted from https://www.w3schools.com/howto/howto_css_switch.asp ----- */
 .mode {
     position:relative;
     display:inline-block;
