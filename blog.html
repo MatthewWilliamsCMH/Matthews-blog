@@ -14,18 +14,25 @@
         <title>Matthew's Blog List</title>
     </head>
     
-    <header>
-        <h1>What I've Thought About Before</h1>
-        <p>light&ensp;
-        <label class="mode">
-            <input type="checkbox">
-            <span class="slider round">
-        </label>
-        &ensp;dark</p>
-        <button id="newPost" type="button">New Post</button>
+    <header id="blog">
+        <div id="slider">
+            <p>light&ensp;
+            <label class="mode">
+                <input type="checkbox" id="checkbox">
+                <span class="slider round">
+            </label>
+            &ensp;dark</p>
+        </div>
+        <div id="title">
+            <h1>Random Thoughts</h1>
+        </div>
+        <div>
+            <button id="newPost" type="button">New Post</button>
+        </div>
     </header>    
 
     <body onload="retrievePosts();">
         <div id="postList"></div>
     </body>
+    <script src="./assets/js/logic.js"></script>
 </html>

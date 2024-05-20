@@ -7,10 +7,10 @@ form {
     padding:15px;
     max-width:700px;
     min-width:580px;
-    border:1px solid darkgray;
+    border:1px solid var(--bdcolor);
     border-radius:10px;
-    box-shadow:4px 4px 4px #CCC;
-    background-color:rgb(255, 244, 229);
+    box-shadow:2px 2px 4px var(--shcolor);
+    background-color:var(--bgcolor);
 }
 
 #metaData {
@@ -25,15 +25,13 @@ form {
 
 #metaData input {
     padding:0 .25rem;
-    border:1px solid black;
+    border:1px solid var(--bdcolor);
     border-radius:5px;
-
 }
 
 #content {
     display:flex;
     padding-top:1rem;
-    /* border:1px solid green; */
 }
 #content label {
     padding-top:.25rem;
@@ -44,18 +42,4 @@ form {
     min-height:200px;
     padding:.25rem;
     border-radius:10px;
-}
-
-button {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size:14px;
-    font-weight:500;
-    margin-top:1.5rem;
-    padding:.5rem;
-    position:absolute;
-    right:0;
-    border: 0.1rem solid darkgray;
-    border-radius:.5rem;
-    background-color:rgb(255, 244, 229);
-    box-shadow: 2px 2px 4px #CCC;
 }

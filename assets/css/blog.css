@@ -1,51 +1,26 @@
 /* ---------- past posts page ---------- */
-
-.titleauthor {
-    display:inline-flex;
-    width:100%;
+/* ----- page header ----- */
+header {
+    display:flex;
     justify-content:space-between;
-    cursor:pointer;
-    /* border:1px solid red; */
+    border-bottom:1px solid var(--bdcolor);
+    margin:auto;
+    padding-bottom:5px;
 }
 
-.titleauthor p {
-    font-family:"Alegreya SC", serif;
-    text-transform:lowercase;
-    letter-spacing:.25em;
+/* slider adapted from https://www.w3schools.com/howto/howto_css_switch.asp */
+#slider {
+    align-content:center;
 }
-
-.content {
-    display:block;
-    padding:5px;
-    margin-top:1px;
-    width:100%;
-    height:56px;
-    max-height:56px;
-    overflow:hidden;
-    border:1px solid darkgray;
-    cursor:pointer;
-    background-color:#efefef;
+#slider p {
+    font-family:"Alegreya SC";
+    letter-spacing:.075em;
 }
-
-.content.clicked {
-    max-height:fit-content;
-    height:fit-content;
-}
-.content.clicked p {
-    font-size:20px;
-}
-
-article {
-    max-width:600px;
-    margin-top:20px;
-}
-
-/* ----- slider adapted from https://www.w3schools.com/howto/howto_css_switch.asp ----- */
 .mode {
     position:relative;
     display:inline-block;
-    width:60px;
-    height:34px;
+    width:30px;
+    height: 17px;
 }
 
 .mode input {
@@ -61,18 +36,21 @@ article {
     right:0;
     bottom:0;
     left:0;
-    background-color:#ccc;
+    background-color: var(--bgcolor);
     transition:400;
+    border:1px solid var(--bdcolor);
+    box-shadow: 0px 2px 0px 0px inset var(--shcolor); 
 }
 
 .slider:before {
     position:absolute;
     content:"";
-    height:26px;
-    width:26px;
-    left:4px;
-    bottom:4px;
+    height:11px;
+    width: 11px;
+    left:1px;
+    bottom: 1px;
     background-color:white;
+    border:1px solid var(--bdcolor);
     transition: 400;
 }
 
@@ -80,18 +58,60 @@ input:checked + .slider {
     background-color:#2196fe;
 }
 
-input:focus + .slider {
-    box-shadow:0 0 1px #2196fe;
-}
-
 input:checked + .slider:before {
-    transform: translateX(26px);
+    transform: translateX(13px);
 }
 
 .slider.round {
-    border-radius:34px;
+    border-radius:17px;
 }
 
 .slider.round:before {
     border-radius: 50%;
+    box-shadow: 1px 1px 1px 1px var(--shcolor);
+}
+
+button#newPost {
+    margin:0;
+    position:static;
+    wrap:nowrap;
+}
+
+/* ----- blog posts ----- */
+.titleauthor {
+    display:inline-flex;
+    width:100%;
+    justify-content:space-between;
+    cursor:pointer;
+}
+
+.titleauthor p {
+    font-family:"Alegreya SC", serif;
+    text-transform:lowercase;
+    letter-spacing:.25em;
+}
+
+.content {
+    display:block;
+    padding:5px;
+    margin-top:1px;
+    width:100%;
+    height:fit-content;
+    max-height:56px;
+    min-height:56px;
+    overflow:hidden;
+    border:1px solid var(--bdcolor);
+    cursor:pointer;
+    background-color:var(--bgcolor);
+    border-radius:10px;
+}
+
+.content.clicked {
+    max-height:fit-content;
+    font-size:20px;
+}
+
+article {
+    max-width:600px;
+    margin-top:20px;
 }

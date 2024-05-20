@@ -1,5 +1,8 @@
 /* ---------- globals ---------- */
 * {
+    --bdcolor: #888;
+    --shcolor:#333;
+    --bgcolor:#eee;
     font-family:"Alegreya", serif;
     font-size: 16px;
     font-weight: 400;
@@ -8,7 +11,11 @@
 }
 
 html {
-    margin: 20px;
+    max-width:600px;
+    left:0;
+    right:0;
+    margin:auto;
+    padding-top:20px;
 }
 
 label {
@@ -20,4 +27,18 @@ h1 {
     font-weight:600;
     font-size:28px;
     text-align:center;
+}
+
+button {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:13px;
+    font-weight:500;
+    margin-top:1.5rem;
+    padding:.5rem;
+    position:absolute;
+    right:0;
+    border: 1px solid var(--bdcolor);
+    border-radius:.5rem;
+    background-color:var(--bgcolor);
+    box-shadow: 2px 2px 4px var(--shcolor);
 }

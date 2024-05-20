@@ -4,8 +4,6 @@ const postContent = document.querySelector("#postContent");
 const form = document.querySelector("form");
 let posts = JSON.parse(localStorage.getItem("blogPosts")) || [];
 
-localStorage.clear(); //for debugging only; remove in final version
-
 function savePost() {
     const blogPost = {
         postAuthor: postAuthor.value,
@@ -19,11 +17,8 @@ function savePost() {
 }
 
 function retrievePosts(){
-    // const blogEntry = document.querySelector(".post");
     const postList = document.querySelector("#postList");
-    // const posts = JSON.parse(localStorage.getItem("blogPosts"));
     
-    // postList.innerHTML = "";
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
         const postAuthor = post.postAuthor;
@@ -37,8 +32,6 @@ function retrievePosts(){
         postList.appendChild(article);
     };
 };
-
-
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
