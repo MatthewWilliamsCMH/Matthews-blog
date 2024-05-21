@@ -1,12 +1,5 @@
-const state = document.querySelector("#slider");
+const state = document.querySelector("#checkbox");
 state.addEventListener("click", function(event) {
-    // event.preventDefault();
-    console.log(state.style.backgroundColor);
-    if (state.style.backgroundColor === "eee") {
-        alert("light moed");
-    }
+        const currentTheme = document.getElementById("theme");
+        currentTheme.classList.toggle("dark-mode");
 });
-
-
-//if .slider background color is 2196fe load dark-mode stylesheet
-//if .slider background-color is eee load light-mode stylesheet

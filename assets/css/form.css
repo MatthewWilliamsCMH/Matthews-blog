@@ -1,45 +1,70 @@
 /* ---------- input form ---------- */
 form {
     position:relative;
+    background-color:var(--bgcolor);
     left:0;
     right:0;
-    margin:10px auto ;
+    margin:10px 10px;
     padding:15px;
-    max-width:700px;
-    min-width:580px;
+    min-width:268px;
+    max-width:600px;
     border:1px solid var(--bdcolor);
     border-radius:10px;
     box-shadow:2px 2px 4px var(--shcolor);
-    background-color:var(--bgcolor);
 }
 
 #metaData {
     display:flex;
-    column-gap:2rem;
+    column-gap:30px;
+    min-width:268px;
 }
 
 #metaData .column {
-    width:50%;
     white-space:nowrap;
+    width:50%;
 }
 
 #metaData input {
-    padding:0 .25rem;
+    font-family:"Alegreya", serif;
+    font-size:16px;
+    padding:0 5px;
     border:1px solid var(--bdcolor);
     border-radius:5px;
 }
 
 #content {
     display:flex;
-    padding-top:1rem;
+    padding-top:20px;
 }
 #content label {
-    padding-top:.25rem;
+    padding-top:5px;
 }
 
 #content textarea {
+    font-family:"Alegreya", serif;
+    font-size:16px;
     width:100%;
     min-height:200px;
-    padding:.25rem;
+    padding:5px;
     border-radius:10px;
 }
+
+form button {
+    margin-top:30px;
+
+}
+
+@media screen and (max-width:580px) {
+    #metaData {
+        display:block;
+        white-space:wrap;
+        width:auto;
+    }
+
+    form {
+        min-width:auto;
+        width:auto;
+        max-width:auto;
+    }
+
+ }

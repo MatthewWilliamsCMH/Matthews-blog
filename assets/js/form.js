@@ -10,10 +10,11 @@ function savePost() {
         postTitle: postTitle.value,
         postContent: postContent.value,
     };
-    posts.push(blogPost)
+    posts.unshift(blogPost)
     localStorage.setItem("blogPosts", JSON.stringify(posts));
 
     window.open("./blog.html");
+    window.close();
 }
 
 function retrievePosts(){

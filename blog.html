@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="theme"> <!--a wrapper that gives JS a target for toggling dark- and lite-themes -->
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="UTF-8" />
@@ -14,25 +14,31 @@
         <title>Matthew's Blog List</title>
     </head>
     
-    <header id="blog">
-        <div id="slider">
-            <p>light&ensp;
-            <label class="mode">
-                <input type="checkbox" id="checkbox">
-                <span class="slider round">
-            </label>
-            &ensp;dark</p>
-        </div>
-        <div id="title">
-            <h1>Random Thoughts</h1>
-        </div>
-        <div>
-            <button id="newPost" type="button">New Post</button>
-        </div>
-    </header>    
+    <div class="page"> <!-- wrapper to control alignment of content as a single entity -->
+        <header id="blog">
+            <div id="slider">
+                <p>Light&ensp;
+                <label class="mode">
+                    <input type="checkbox" id="checkbox">
+                    <span class="slider round">
+                </label>
+                &ensp;Dark</p>
+            </div>
+            <div id="title">
+                <h1>Random Thoughts</h1>
+            </div>
+            <div>
+                <button id="newPost" type="button">New Post</button>
+            </div>
+        </header>    
 
-    <body onload="retrievePosts();">
-        <div id="postList"></div>
-    </body>
-    <script src="./assets/js/logic.js"></script>
+        <body onload="retrievePosts();">
+            <div id="postList"></div>
+            <script src="./assets/js/logic.js"></script>
+        </body>
+        <footer>
+            <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Matthew Williams</p>
+            <p><a href="https://matthewwilliamscmh.github.io/Matthew-Williams-Portfolio/" target="_blank">Check out what else Matthew has done</a></p>
+        </footer>
+    </div>
 </html>

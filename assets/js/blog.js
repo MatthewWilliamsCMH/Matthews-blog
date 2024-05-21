@@ -21,23 +21,10 @@ function retrievePosts(){
         })
     });
 
-    const clickedButton = document.querySelector("#newPost")
+    const clickedButton = document.querySelector("#newPost");
     clickedButton.addEventListener("click", () => {
         window.open("index.html");
+        window.close();
     }
     )
 };
-
-    //✔️retrieve data from localStorage
-    //✔️retrieve object from data
-    //✔️asssign each key value from object to a variable
-    //✔️insert variable for author into div
-    //✔️insert variable for title into same div
-    //✔️insert variable for content into new div
-    //✔️wrap pair of divs into article
-    //✔️display article
-    //✔️repeat for each item in data
-    //✔️display selected post
-    //✔️return to input form to add another post
-    // activate dark-mode
-    // style
