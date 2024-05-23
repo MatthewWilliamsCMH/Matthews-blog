@@ -15,7 +15,7 @@ form {
 
 #metaData {
     display:flex;
-    min-width:268px;
+    column-gap:20px;
 }
 
 #metaData .column {
@@ -24,6 +24,7 @@ form {
 }
 
 #metaData input {
+    flex:1 1 auto;
     font-family:"Alegreya", serif;
     font-size:16px;
     padding:0 5px;
@@ -50,15 +51,19 @@ form {
 
 form button {
     margin-top:30px;
-
 }
 
-@media screen and (max-width:580px) {
+@media screen and (max-width:600px) {
     #metaData {
         display:block;
         white-space:wrap;
         width:auto;
     }
+
+    #metaData .column {
+    padding-bottom:5px;
+    }
+    
 
     form {
         min-width:auto;
